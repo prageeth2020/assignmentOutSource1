@@ -1,0 +1,77 @@
+.backColorTop {
+    background-color: #8A2BE2;
+}
+.bdy {
+
+}
+.bodyHeight{
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #00BDFC;
+}
+
+.footer {
+
+    width: 100%;
+    background-color: #454545;
+
+}
+.backColorFotter {
+    background-color: #454545;
+}
+
+.tbl {
+
+}
+.show {
+    visibility: visible;
+
+}
+.hide {
+    display: none;
+    opacity: 0.0;
+}
+
+.frm {
+    width: 80%;
+    margin : 0 0 ;
+
+}
+
+@media screen and (orientation: portrait) {
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #454545;
+
+    }
+}
+
+
+html, body {
+    height: 100%;
+}
+
+/* CSS only for examples not required for centering */
+.container {
+    height: 100%;
+}
+
+.note {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    background: #eee;
+    max-width: 360px;
+
+}
+
+/* show border around full height container */
+.h-100 {
+
+}
