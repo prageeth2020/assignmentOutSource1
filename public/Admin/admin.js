@@ -242,6 +242,7 @@ appMain.controller('adminCtrl', function ($scope, $interval, $http , $window ) {
         }).then(function (response) {
             console.log(response);
             $scope.orderDetailsArray = response.data;
+
             $scope.alertBox = "hide";
             //window.location.reload();
         })
@@ -267,7 +268,7 @@ appMain.controller('adminCtrl', function ($scope, $interval, $http , $window ) {
         }).then(function (response) {
             if (response != true) {
                 alert('Item Deleted successfully');
-                getDetailsofStoreManger();
+                getOrders();
             } else {
                 alert('Error in deleting');
             }
@@ -276,7 +277,7 @@ appMain.controller('adminCtrl', function ($scope, $interval, $http , $window ) {
 
     $scope.logOut = function () {
         localStorage.removeItem("loggedInUser");
-        $window.location.href = '../login';
+        $window.location.href = '../';
     }
 });
 

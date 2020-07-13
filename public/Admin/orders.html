@@ -10,11 +10,20 @@
 </div>
 <div ng-repeat="orderDetails in orderDetailsArray">
     <div class="row row-cols-1 row-cols-md-3">
-        <div class="col mb-4">
+        <div class="col mb-4 mx-2 my-2">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Order ID : {{$index + 1}}</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text">
+                        {{orderDetails.username}} has places an order with following items.
+                    </p>
+                    <p class="card-text text-success">
+                        {{orderDetails.list}}
+                    </p>
+                    <p class="card-text">
+                        You have to deliver this order to {{orderDetails.address}}
+                    </p>
+                    <button type="submit" class="btn btn-danger" ng-click="DeleteOrder(orderDetails.id)">Delete</button>
                 </div>
             </div>
         </div>

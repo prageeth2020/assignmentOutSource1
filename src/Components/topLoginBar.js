@@ -45,12 +45,15 @@ class TopLoginBar extends Component {
             if(this.state.username == 'storeManager' && this.state.password == '222'){
                 this.type1 = 'storeManager';
             }
-            if(this.state.username == 'user' && this.state.password == '333'){
-                this.type1 = 'user';
+            else {
+                if(this.state.username == 'user' && this.state.password == '333'){
+                    this.type1 = 'user';
+                }
+                else{
+                    this.type1 = 'no';
+                }
             }
-            else{
-                this.type1 = 'no';
-            }
+
 
         }
 

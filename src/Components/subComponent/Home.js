@@ -52,7 +52,7 @@ class Home extends Component {
                 obj2.qty = "1";
 
                 axios.post('http://localhost:5000/cart' , obj2 ).then((response => {
-
+                    alert("Item added successfully");
                 })).catch((error) => {
 
                 })
