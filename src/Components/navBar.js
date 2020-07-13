@@ -67,7 +67,7 @@ class NavBar extends Component {
                     </ul>
                     <form className="form-inline">
                         {!utils.isEmpty() &&
-                            <i className="fas fa-shopping-cart fa-2x text-white" onClick={this.cart}></i>
+                            <Link to="/cart" className="fas fa-shopping-cart fa-2x text-white" onClick={this.cart}></Link>
                         }
                     </form>
 

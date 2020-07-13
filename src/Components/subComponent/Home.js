@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
-import Item from './item'
+
 import axios from "axios";
+import utils from "../../utils/utils";
+
+
+
 class Home extends Component {
     constructor() {
         super();
@@ -24,6 +28,43 @@ class Home extends Component {
         })
     }
 
+    addItem(count) {
+        var obj = {};
+        obj = utils.checkLoggedInUser();
+        var result = [];
+        if(obj == null){
+            alert("Please login first");
+        }
+        else {
+            var name ;
+            var price;
+            axios.get('http://localhost:5000/items/'+ count).then((response => {
+                result = response.data;
+                console.log(result.name);
+                name = result.name;
+                price = result.price;
+
+                var obj2 = new Object();
+
+                obj2.user = "1";
+                obj2.item = name;
+                obj2.price = price;
+                obj2.qty = "1";
+
+                axios.post('http://localhost:5000/cart' , obj2 ).then((response => {
+
+                })).catch((error) => {
+
+                })
+
+
+            })).catch((error) => {
+
+            })
+
+
+        }
+    }
     render() {
         return (
             <div className="mx-5 my-5">
@@ -42,7 +83,7 @@ class Home extends Component {
                                         Item Price : {field.price} Available discount {field.offer} category
                                     </p>
 
-                                    <button type="submit" className="btn btn-primary" onClick={this.addItem}>Add to Cart</button>
+                                    <button type="submit" className="btn btn-primary" onClick={this.addItem.bind(this, field.id)}>Add to Cart</button>
                                 </div>
                             </div>
                         </div>

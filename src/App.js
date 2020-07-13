@@ -7,7 +7,7 @@ import ContactUs from './Components/subComponent/contactUs'
 import AboutUs from './Components/subComponent/aboutUs'
 import Login from './Components/login'
 import Register from './Components/register'
-
+import Cart from "./Components/subComponent/cart";
 function App() {
 
 
@@ -34,9 +34,8 @@ function App() {
 
                 <Route exact path="/AboutUs" component={AboutUs} />
 
-                <Route exact path="/logIn" component={Login} />
 
-                <Route exact path="/register" component={Register} />
+                <Route exact path="/cart" component={Cart} />
 
         </Router>
     </div>
